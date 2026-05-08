@@ -1,38 +1,92 @@
-.App {
-  text-align: center;
-}
+/* Layout: tab bar fixed at top, panel fills the rest of the viewport. */
+html, body, #root { height: 100%; margin: 0; }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #1e1e1e;
+  color: #d4d4d4;
 }
 
-.App-link {
-  color: #61dafb;
+.header {
+  flex: 0 0 auto;
+  padding: 16px 20px 12px;
+  background: #252526;
+  border-bottom: 1px solid #333;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.title {
+  margin: 0 0 4px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #d4d4d4;
+}
+
+.description {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #969696;
+  max-width: 720px;
+}
+
+.tabs {
+  display: flex;
+  background: #252526;
+  border-bottom: 1px solid #333;
+  flex: 0 0 auto;
+}
+
+.tab {
+  background: transparent;
+  border: none;
+  color: #969696;
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+}
+
+.tab:hover { color: #d4d4d4; }
+
+.tab-active {
+  color: #d4d4d4;
+  border-bottom-color: #007acc;
+}
+
+.panel {
+  flex: 1 1 auto;
+  display: flex;
+  min-height: 0; /* allow children to shrink so the textarea/scroll works */
+}
+
+.input {
+  flex: 1;
+  border: none;
+  outline: none;
+  resize: none;
+  padding: 16px;
+  background: #1e1e1e;
+  color: #d4d4d4;
+  font-family: 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.pretty {
+  flex: 1;
+  overflow: auto;
+  padding: 16px;
+  font-family: 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.error {
+  flex: 1;
+  padding: 16px;
+  color: #f48771;
+  font-family: 'SF Mono', Menlo, Consolas, monospace;
 }
